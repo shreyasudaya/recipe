@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- 404 Error -->
+<section class="uk-container">
+    <div class="flask-error">
+
+        <!-- ROTATING GLOBE -->
+        <i uk-icon="icon: world; ratio: 6"></i>
+
+        <!-- TEXT -->
+        <p>Error 404</p>
+
+        <!-- GO HOME BUTTON -->
+        <a href="{{ url_for('index') }}">
+            <button class="uk-button">home</button>
+        </a>
+    </div>
+</section>
+{% endblock %}

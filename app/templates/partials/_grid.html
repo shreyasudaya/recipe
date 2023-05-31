@@ -1,0 +1,53 @@
+{% block content %}
+<div class="recipe-card uk-card uk-card-default uk-card-hover">
+
+    <!-- RECIPE IMAGE -->
+    <div class="uk-card-media-top uk-cover-container">
+        <a tabindex="0" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">
+            <img class="grid-image " data-src="{{ recipe.image[0] }}" alt="{{ recipe.image[1] }}" uk-img uk-cover>
+            <canvas height="1000" width="1000"></canvas>
+        </a>
+    </div>
+
+    <!-- CARD BODY -->
+    <div class="uk-card-body uk-padding-small">
+
+        <!-- RECIPE LABEL -->
+        <div class="uk-card-badge uk-label">
+            {% if recipe.filters.main_ingredient != "" %}
+                {{ recipe.filters.main_ingredient }}
+            {% elif recipe.filters.ingred[0] != "" %}
+                {{ recipe.filters.ingred[0] }}
+            {% else %}
+                {{ recipe.filters.cuisine }}
+            {% endif %}
+        </div>
+
+        <!-- RECIPE TITLE -->
+        <p class="uk-text-truncate"><a class="uk-h5" href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a></p>
+
+        <!-- SORT BY -->
+        <p class="uk-text-meta">
+            {% if sort == 'users.likes' %}Likes: <i uk-icon="arrow-down"></i>
+            {% elif sort == 'users.dislikes' %}Dislikes <i uk-icon="arrow-down"></i>
+            {% elif sort == 'details.title' %}By Title
+            {% elif sort == 'filters.skill' %}Difficulty: {{ recipe.filters.skill }}
+            {% elif sort == 'details.author' %}Author: {{ recipe.details.author }}
+            {% elif sort == 'details.serves' %}{{ recipe.details.serves|title }}
+            {% elif sort == 'filters.main_ingredient' %}Main Ingredient:  
+                {% if recipe.filters.main_ingredient != "" %}
+                    {{ recipe.filters.main_ingredient }}
+                {% else %}
+                    {{ recipe.filters.ingred[0] }}
+                {% endif %}
+            {% else %}Likes <i uk-icon="arrow-down"></i>
+            {% endif %}
+        </p>
+
+        <!-- ICON NAV -->
+        <ul class="uk-iconnav uk-align-left">
+                {% include 'partials/_favourites_menu.html' %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

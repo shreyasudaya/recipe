@@ -1,0 +1,209 @@
+
+/*
+==================================================================
+    Navigation Bar
+==================================================================
+*/
+
+#header {
+    background-color: var(--darkblue);
+    color: var(--black);
+    box-shadow: var(--box-shadow)
+}
+
+nav a {
+    color: var(--black) !important;
+}
+
+nav a:hover {
+    color: var(--white) !important;
+    opacity: 0.7;
+}
+
+#navbar-small {
+    display: none;
+    padding: 10px 20px;
+}
+
+#navbar-small-right {
+    top: -14px;
+    right: 20px;
+}
+
+#navbar-small-right li {
+    margin: 0 -5px;
+}
+
+#navbar-small-right a {
+    font-size: 0.8rem;
+}
+
+#navbar-container {
+    max-width: 1300px;
+    margin: auto;
+}
+
+#navbar-large {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+/*
+=================================
+    Logo
+=================================
+*/
+
+#logo-container {
+    width: 140px;
+    text-align: center;
+}
+
+#logo {
+    height: 109px;
+    width: 120px;
+    margin-right: 10px;
+    padding: 10px 0;
+    text-align: center;
+    transition: 0.5s;
+}
+
+
+/*
+=================================
+    Main Menu
+=================================
+*/
+
+#main-menu li a {
+    padding: 10px;
+}
+
+#main-menu li i {
+    margin-top: -1px;
+    padding-left: 5px;
+}
+
+#main-menu .main-menu-ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#main-menu .nowrap {
+    flex-wrap: nowrap;
+}
+
+#main-menu .main-menu-item  {
+    width: 150px;
+}
+
+#main-menu .main-menu-item  a {
+    color: var(--black) !important;
+}
+
+.uk-navbar-dropdown {
+    border-radius:  0 0 5px 5px;
+}
+
+.submenu-heading {
+    padding-left: 10px;
+    text-transform: uppercase;
+    color: var(--darkblue) !important;
+    font-size: 13px;
+}
+
+
+/*
+=================================
+    Search
+=================================
+*/
+
+.uk-navbar-toggle,
+#search-icon-text {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.uk-navbar-toggle:hover,
+#search-icon-text:hover {
+    color: var(--white);
+    opacity: 0.7;
+}
+
+#search-icon-text {
+    position: relative;
+    right: -40px;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+#search-icon:hover {
+    animation: growSearch 0.35s;
+}
+
+#nav-search:hover > #search-icon-text {
+    right: 0px;
+    opacity: 1;
+}
+
+@keyframes growSearch {
+    0% {transform: scale(1);}
+    50% {transform: scale(1.2);}
+    100% { transform: scale(1);}
+} 
+
+
+/*
+=================================
+    OffCanvas
+=================================
+*/
+
+#offcanvas-toggle {
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.uk-offcanvas-bar {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--medblack);
+}
+
+#offcanvas-content {
+    flex-grow: 1;
+}
+
+#offcanvas-logo {
+    margin: 50px auto 0;
+}
+
+#offcanvas-search-icon {
+    display: inline;
+    padding-right: 20px;
+}
+
+.uk-search-input {
+    font-size: 5vmin !important;
+}
+
+#offcanvas-iconnav {
+    margin-top: 30px;
+    justify-content: center;
+}
+
+a.uk-icon-button.uk-icon {
+    line-height: 2 !important;
+    text-align: center !important;
+}
+
+ul.uk-iconnav {
+    justify-content: center;
+}
+
+
+

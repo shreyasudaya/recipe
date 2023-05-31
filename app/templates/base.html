@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- META -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta id="uli" data-value="{{ 'true' if current_user.is_authenticated else 'false' }}">
+    <meta name="description" content="Never gonna give you up, never gonna let you down">
+    <meta name="author" content="Shreyas">
+    <title>Cookaroo </title>
+    <link rel="icon" href="{{ url_for('static', filename='images/kangaroo.png') }}" sizes="72x72">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!--HEADER -->
+    <header id="header" uk-sticky>{% include 'partials/_navbar.html' %}</header>
+
+    <!-- MAIN -->
+    <main>{% block content %}{% endblock %}</main>
+
+    <!-- FOOTER -->
+    <footer>{% include 'partials/_footer.html' %}</footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

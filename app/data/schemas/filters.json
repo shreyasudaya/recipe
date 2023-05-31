@@ -1,0 +1,8 @@
+{
+    "cuisine": ["american", "chinese", "french", "indian", "italian", "japanese", "mediterranean", "mexican", "japanese" ,"southeast-asian"],
+    "course": ["tea", "breakfast", "snack", "drinks", "sidedish", "dessert", "dinner", "drink", "lunch", "main-course", "starter"],
+    "planning": ["quick", "beginners", "everyday-food", "freezable", "in-season", "ultimate"],
+    "mood": ["budget", "casual", "comfort", "family-friendly", "formal","indulgent", "light", "romantic"],
+    "diet": ["dairy-free", "gluten-free", "healthy", "low-calorie", "low-fat", "low-salt", "vegetarian","jain"],
+    "skill": ["easy", "medium", "hard"]
+}

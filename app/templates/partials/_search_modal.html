@@ -1,0 +1,17 @@
+{% block content %}
+<!-- SEARCH ELEMENT -->
+<div id="nav-search" class="uk-navbar-right">
+    <a id="search-icon-text" href="#modal-full" uk-toggle>search ...</a>
+    <a id="search-icon" class="uk-navbar-toggle" href="#modal-full" uk-search-icon uk-toggle></a>
+</div>
+
+<!-- SEARCH MODAL -->
+<div id="modal-full" class="uk-modal-full uk-modal" uk-modal>
+    <div class="uk-modal-dialog uk-flex uk-flex-center uk-flex-middle" uk-height-viewport>
+        <button class="uk-modal-close-full" type="button" uk-close></button>
+        <form class="uk-search uk-search-large" method="POST" action="{{ url_for ('search')  }}">
+            <input class="uk-search-input uk-text-center" name="search_term" type="search" placeholder="Search for recipes, foods ..." autocomplete="off" autofocus required>
+        </form>
+    </div>
+</div>
+{% endblock %}

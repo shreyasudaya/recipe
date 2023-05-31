@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<section id="profile" class="uk-container">
+
+    <!-- TITLE -->
+    <h1 class="uk-heading-divider uk-h2 uk-margin">Welcome, {{ current_user.user['username']|title }}.</h1>
+
+    <!-- EDITED RECIPES -->
+    <div id="my-recipes" class=" uk-margin uk-inline">
+        <h2 class="uk-h4">My Edited Recipes</h2>
+
+        <!-- PLACEHOLDER IF 0 RECIPES EXIST  -->
+        {% if recipes|count == 0 %}
+            <div id="recipes-placeholder" class="uk-placeholder uk-text-center uk-padding-large">
+                    <p>Empty, No Edited Recipes Yet.</p>
+            </div>
+        {% else %}
+            <div id="grid" class="uk-grid-medium uk-grid-match uk-child-width-1-2@s uk-child-width-1-4@m" uk-grid>
+                {% for recipe in recipes %}
+                    {% include 'partials/_grid.html' %}
+                {% endfor %}
+            </div>
+
+            <!-- SHOW BUTTONS IF MORE THAN 8 RECIPES EXIST -->
+            {% if recipes|count > 8 %}
+                <div class="uk-margin-top">
+                    <button id="show-more-recipes" class="uk-button">Show More</button>
+                    <button id="show-less-recipes" class="uk-button uk-button-danger">Show Less</button>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+
+   
+</section>
+{% include 'partials/_add_recipe_button.html' %}
+{% endblock %}

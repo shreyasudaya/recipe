@@ -1,0 +1,111 @@
+
+/*
+==================================================================
+    Media Queries
+==================================================================
+*/
+
+/* 1300px */
+@media screen and (max-width: 1300px) {    
+    #navbar-large {
+        padding: 0 20px;
+    }
+}
+
+
+/* 1200px */
+@media screen and (max-width: 1200px) {
+    #navbar-small, footer section div {
+        display: block !important;
+    }
+    
+    #navbar-large {
+        display: none;
+    }
+
+    #recipe-lists {
+        flex-direction: column-reverse;
+    }
+
+    #cta {
+        margin-top: -20px;
+    }
+
+    #profile #my-comments {
+        width: 100%;
+        margin-left: 0px;
+    }
+    
+    #profile #my-recipes {
+        width: 100%;
+    }
+}
+
+
+/* 800px */
+@media screen and (max-width: 800px) {
+    #cta p {
+        font-size: 1.45rem;
+    }
+
+    .recipe-count {
+        display: block;
+    }
+
+    #filters-form, #filters-grid {
+        display: block;
+        width: 100%;
+    }
+
+    #filters-search .uk-select {
+        width: 100%;
+    }
+
+    #filters-form {
+       display: none;
+    }
+
+    .filters-toggle {
+        display: block !important;
+    }
+
+    #expand-filters {
+        display: block;
+    }
+
+    .uk-select {
+        width: 100%;
+    }
+
+    #editor #instructions div {
+        min-width: 100%;
+    }
+    
+    #editor #ingredients input {
+        min-width: 49%;
+    }
+}
+
+/* 640px */
+@media screen and (max-width: 640px) {
+    .grid-image {
+        width: 100%;
+    }
+}
+
+/* 500px */
+@media screen and (max-width: 500px) {
+    #nav-search {
+        display: none;
+    }
+
+    .uk-subnav > * {
+        min-width: 200px;
+        margin: auto;
+        text-align: center;
+    }
+    
+    #editor #ingredients input {
+        min-width: 99%;
+    }
+}

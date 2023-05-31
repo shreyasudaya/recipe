@@ -1,0 +1,48 @@
+{% block content %}
+<div class="slider" uk-slider="center: true; autoplay: true; autoplay-interval: 5000;">
+    <div class="uk-position-relative uk-visible-toggle" tabindex="-1">
+        <ul class="uk-slider-items uk-child-width-1-2@s uk-grid">
+                
+            {% for recipe in slideshow %}
+                <div class="featured-slider-card uk-card uk-card-default uk-grid-collapse uk-child-width-1-2@s uk-margin" uk-grid>
+                    
+                    <!-- CARD IMAGE -->
+                    <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">
+                        <div class="uk-card-media-left uk-cover-container">
+                            <img class="slider-image" data-src="{{ recipe.image[0] }}" alt="{{ recipe.image[1] }}" uk-cover uk-img>
+                            <canvas width="400" height="400"></canvas>
+                        </div>
+                    </a>
+
+                    <!-- CARD BODY -->
+                    <div class="uk-card-body">
+                        <div class="uk-card-badge uk-label">{{ recipe.filters.cuisine|title }}</div>
+                        <h3 class="uk-card-title">
+                            <a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">{{ recipe.details.title|title }}</a>
+                        </h3>
+                        <p>{{ recipe.details.description }}</p>
+                        <p><span class="card-lead-text">Author:</span>{{ recipe.details.author }}</p>
+                        <p><span class="card-lead-text">Difficulty:</span>{{ recipe.details.difficulty }}</p>
+                        <p><span class="card-lead-text">Serves:</span>{{ recipe.details.serves }}</p>
+                        <p class="slider-icons"><i uk-icon="bell"></i> {{ recipe.details.cook_time  }} <i uk-icon="bolt"></i> {{ recipe.details.prep_time }}</p>
+                        <p><a href="{{ url_for('recipe', recipe=recipe._id, title=recipe.details.title|resub )}}">More Details ...</a></p>
+                        
+                        <!--ICONNAV -->
+                        <div class="uk-card-footer uk-position-bottom-right">
+                            <ul class="uk-iconnav">
+                                {% include 'partials/_favourites_menu.html' %}
+                                <li  uk-tooltip="title: Comments; pos: top-right"><i uk-icon="comments">  {{ recipe.users.comments|count }} </i></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </ul>
+        
+        <!-- ARROWS -->
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover slider-arrows" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover slider-arrows" href="#" uk-slidenav-next uk-slider-item="next"></a>
+    </div>
+    <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+</div>
+{% endblock %}

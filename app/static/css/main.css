@@ -1,0 +1,504 @@
+
+/*
+==================================================================
+    Variables / Fonts
+==================================================================
+*/
+
+/* Set variables on root to make available to all styles */
+:root {
+    --green: #4D875D;
+    --grey: #666666;
+    --lightgrey: #999999;
+    --black:#262626;
+    --medblack: #2d2d2d;
+    --lightblack: #434343;
+    --white: #f5f5f5;
+    --darkwhite: #e8e8e8;
+    --blue: #1E87F0;
+    --darkblue: #506377;
+    --transition: 0.35s;
+    --box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.4);
+    --light-box-shadow: 0px 2px 10px 0px rgba(0,0,0,0.1);
+}
+
+/* Font Imports */
+@font-face {
+    src: url('../fonts/ProximaNova-Light.woff2');
+    font-family: 'ProximaNova Light';
+}
+
+@font-face {
+    src: url('../fonts/ProximaNova-Reg.woff2');
+    font-family: 'ProximaNova Regular';
+}
+
+@font-face {
+    src: url('../fonts/Ubuntu-Bold.ttf');
+    font-family: 'Ubuntu';
+}
+
+
+/*
+==================================================================
+    General
+==================================================================
+*/
+
+/* body get a min-height and flex  to push footer to p */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: 'ProximaNova Light', Roboto, sans-serif;
+    color: var(--grey);
+}
+
+/* headings restyled form default */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'ProximaNova Regular', Roboto, sans-serif;
+    color: var(--black);
+}
+
+h1, h2, .uk-h1, .uk-h2 {
+    font-family: 'ProximaNova Light', Roboto, sans-serif;
+    text-decoration-color: var(--black) !important;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+}
+
+/* flex: 1 used to make main fill any unused remaining space  */
+main {
+    flex: 1;
+    margin-top: 50px;
+}
+
+/*  footer should be at bottom of either page or content */
+footer {
+    margin-top: 60px;
+    padding: 30px 0 10px;
+    color: var(--white);
+    background-color: var(--darkblue);
+}
+
+footer a.uk-icon-button.uk-icon {
+    background-color: transparent;
+    color: white;
+}
+
+footer a.uk-icon-button.uk-icon:hover {
+    opacity: 0.7;
+}
+
+footer img {
+    margin-top: -3px;
+}
+
+
+/*
+==================================================================
+    Forms
+==================================================================
+*/
+
+/* Most changes on the form where overwrites of default styling by uikit  */
+
+
+.uk-input, .uk-textarea, .uk-select {
+    margin-top: 10px;
+    border: 1px solid var(--lightgrey);
+}
+
+.uk-input:focus, .uk-textarea:focus, .uk-select:focus {
+    border-color: var(--grey);
+    box-shadow: var(--light-box-shadow);
+}
+
+.uk-checkbox {
+    margin-right: 10px;
+    border: 1px solid var(--lightgrey);
+}
+
+.uk-button, .uk-button:active, .uk-button:focus {
+    background: var(--darkblue);
+    color: var(--white);
+    cursor: pointer;
+    border-radius:  3.5px;
+    transition: 0.4s;
+}
+
+.uk-button:hover {
+    background-color: var(--lightblack);
+    box-shadow: var(--light-box-shadow);
+    border-radius: 0;
+}
+
+.uk-button-danger {
+    background-color: #F0506E !important;
+    height: 38px;
+}
+
+.uk-button-danger:hover {
+    background-color: var(--black) !important;
+}
+
+/* wtf_forms error message color */
+.flashes {
+    font-weight: bolder;
+    color: crimson;
+}
+
+
+/*
+==================================================================
+    Slider
+==================================================================
+*/
+
+.featured-slider-card {
+    width: 100%;
+}
+
+.uk-card-badge {
+    top: 10px;
+    right: 10px;
+    color: white !important;
+    background-color: var(--darkblue) !important;
+}
+
+.uk-slidenav-next, .uk-slidenav-previous {
+    color: var(--lightblack) !important;
+}
+
+.slider-icons {
+    padding-right: 10px;
+    color: var(--black) !important;
+}
+
+.slider-icons:last-of-type {
+    margin-left: 10px;
+}
+
+.card-lead-text {
+    display: inline-block;
+    width: 80px;
+    color: var(--black) !important;
+}
+
+.uk-card-title a {
+    text-decoration: none;
+    color: var(--black) !important;
+}
+
+.uk-card-title a:hover, a.uk-h5:hover {
+    opacity: 0.7;
+    text-decoration: none;
+    color: var(--black) !important;
+}
+
+.uk-iconnav > * > a, .uk-iconnav > * > i  {
+    text-decoration: none;
+    color: var(--black);
+    cursor: pointer;
+}
+
+.slider .uk-iconnav > * > a, .slider .uk-iconnav > * > i,
+#recipe .uk-iconnav > * > a, #recipe .uk-iconnav > * > i ,
+.grid .uk-iconnav > * > a, .grid .uk-iconnav > * > i     {
+    vertical-align: top;
+}
+
+
+/*
+==================================================================
+   Index Page
+==================================================================
+*/
+
+#cta {
+    border-radius: 10px;
+    font-weight: bold;
+    background-image: linear-gradient(to bottom right,rgba(76, 76, 76, 0.3),rgba(224, 224, 224, 0.3)), url(../images/cta-bg.jpg);
+}
+
+#cta p {
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 1px 1px rgba(0,0,0,0.5);
+}
+
+
+/*
+==================================================================
+    Recipe Page
+==================================================================
+*/
+
+.cuisine-badge {
+    padding: 2px 5px;
+    border-radius: 3px;
+    color: var(--white);
+    background-color: var(--darkblue);
+}
+
+.tags {
+    padding: 0 5px;
+}
+
+.uk-padding-bottom {
+    padding-bottom: 40px;
+}
+
+.uk-comment, .uk-placeholder {
+    background-color: var(--darkwhite) !important;
+    border-radius: 5px;
+}
+
+.uk-comment-title {
+    text-transform: capitalize;
+}
+
+p.comment {
+    padding-left: 110px;
+    padding-bottom: 10px;
+}
+
+
+/*
+==================================================================
+    Sign In / Out Page
+==================================================================
+*/
+
+#sign {
+    max-width: 350px;
+    min-width: 250px;
+    margin: auto;
+    padding: 0 15px;
+    text-align: center;
+}
+
+#sign form {
+    text-align: left;
+}
+
+#sign form p {
+    margin: 30px 0;
+}
+
+
+/*
+==================================================================
+    Filters / Search Page
+==================================================================
+*/
+
+#filters-form, #filters-grid {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#filters-form {
+    width: 29%;
+}
+
+#filters-grid {
+    width: 70%;
+}
+
+#filters-search .uk-select {
+    width: 85%;
+}
+
+#expand-filters {
+    display: none;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+
+/*
+==================================================================
+    Grid
+==================================================================
+*/
+
+#grid-filters-nav {
+    background-color: var(--darkwhite);
+}
+
+#grid .uk-text-meta {
+    color: var(--lightblack) !important;
+}
+
+.grid-image {
+    border-radius: 3px;
+}
+
+.uk-cover {
+    top: 46%;
+}
+
+.uk-subnav-pill li:hover {
+    cursor: pointer;
+}
+
+.user-favourite {
+    color: red !important;
+}
+
+.uk-notification-message {
+    border-radius: 3px;
+    color: var(--darkblue);
+}
+
+
+/*
+==================================================================
+    404, 500 Errors Pages
+==================================================================
+*/
+
+.flask-error {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+}
+
+.flask-error i {
+    color: var(--darkblue);
+    animation: rotateglobe 4s linear infinite;
+}
+
+.flask-error p {
+    font-size: 2.5vmax;
+    font-weight: bold;
+    margin: 10px 10px 15px;
+}
+
+/* rotating global keyframes */
+@keyframes rotateglobe {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(359deg); }
+}
+
+
+/*
+==================================================================
+    Editor Page
+==================================================================
+*/
+
+#editor .uk-input, #editor .uk-textarea { 
+    margin-bottom: 10px;
+}
+
+#editor .uk-select {
+    margin: 10px 0;
+}
+
+#editor .uk-grid-margin {
+    margin-top: 15px !important;
+}
+
+#editor textarea {
+    resize: vertical;
+}
+
+#editor #instructions , #editor #ingredients   {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+#editor #instructions div {
+    max-width: 49%;
+}
+
+#editor #ingredients input {
+    max-width: 24%;
+    padding-left: 10px;
+}
+
+#editor td input {
+    position: relative;
+    width: 20%;
+    min-width: 20px;
+}
+
+#editor .uk-block {
+    display: block;
+}
+
+#editor h3 {
+    background-color: #e6e5e5;
+    padding: 15px;
+    margin-left: 30px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+}
+
+
+/*
+==================================================================
+    Misc.
+==================================================================
+*/
+
+#add-new-recipe-button {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    border: 1px solid var(--darkblue);
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    line-height: 38px;
+    text-align: center;
+    background-color: var(--darkblue);
+    color: var( --white);
+    transition: var( --transition);
+    box-shadow: -1px 0px 8px 0px rgba(0,0,0,0.4);
+    z-index: 100;
+}
+
+#add-new-recipe-button:hover {
+    background-color: var(--lightblack);
+}
+
+#add-new-recipe-button a:hover {
+    color: white !important;
+}
+
+
+/*
+==================================================================
+   Profile Page
+==================================================================
+*/
+
+#profile #my-comments, #profile #my-recipes {
+    vertical-align: top;
+}
+
+#profile #my-comments {
+    width: 24%;
+    margin-left: 15px;
+}
+
+#profile #my-recipes {
+    width: 74%;
+}
+
+#profile .uk-align-left {
+    margin-right: 0;
+}
