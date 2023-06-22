@@ -5,4 +5,4 @@ Directions for local deployment:
 2. Go to folder. 
 3. activate virtual environment
 4. pip install -r requirements.txt
-5. python run.py# recipe_website
+5. python run.py
